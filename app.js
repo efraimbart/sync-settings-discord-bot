@@ -52,10 +52,21 @@ app.post('/interactions', async function (req, res) {
       if (results) {
         var title = results[1]
         var url = results[2]
+      } else if (setting.startsWith('sync-settings://')) {
+        title = setting
+        url = setting.replace('sync-settings://', '')
       } else {
-        
+        return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          embeds: [{
+            title: title, //`sync-settings://${setting}`,
+            url: `${process.env.BASE_URL}setting/${url}`,
+            type: 'link'
+          }]
+        },
+      });
       }
-      // const title = setting.split('-')[1].replace('-' )
       
       // Send a message into the channel where command was triggered from
       return res.send({
