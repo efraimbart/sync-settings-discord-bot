@@ -22,10 +22,12 @@ app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 // Store for in-progress games. In production, you'd want to use a DB
 const activeGames = {};
 
+app.get()
+
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
  */
-app.post('/interactions', async function (req, res) {
+app.post('/api/interactions', async function (req, res) {
   // Interaction type and data
   const { type, id, data } = req.body;
 
