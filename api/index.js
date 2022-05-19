@@ -22,7 +22,7 @@ app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 // Store for in-progress games. In production, you'd want to use a DB
 const activeGames = {};
 
-app.get('/api', (req, res) => {
+app.post('/api', (req, res) => {
   res.end("test")
 })
 /**
