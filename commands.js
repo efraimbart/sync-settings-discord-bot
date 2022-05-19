@@ -65,7 +65,7 @@ export const SETTING_COMMAND = {
   options: [
     {
       type: 3,
-      name: 'link',
+      name: 'setting',
       description: 'Enter sync setting link',
       required: true
     }
