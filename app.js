@@ -46,13 +46,16 @@ app.post('/interactions', async function (req, res) {
 
     // "setting" guild command
     if (name === 'setting') {
+      const setting = req.body.data.options[0].value.replace('sync-settings://', '')
+      const title = setting.split('-')[1].replace('-' )
+      
       // Send a message into the channel where command was triggered from
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           embeds: [{
-            title: 'Sync setting link',
-            url: `${process.env.BASE_URL}setting/test`,
+            title: setting,
+            url: `${process.env.BASE_URL}setting/${setting}`,
             type: 'link'
           }]
         },
