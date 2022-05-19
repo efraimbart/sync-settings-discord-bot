@@ -52,10 +52,11 @@ app.post('/interactions', async function (req, res) {
         data: {
           // Fetches a random emoji to send from a helper function
           // content: 'hello world ' + getRandomEmoji(),
-          embed: {
+          embeds: [{
             title: 'Sync setting link',
-            url: 'sync-setting://test'
-          }
+            url: 'sync-setting://test',
+            type: 'link'
+          }]
         },
       });
     }
