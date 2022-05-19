@@ -53,16 +53,24 @@ app.post('/interactions', async function (req, res) {
           // Fetches a random emoji to send from a helper function
           // content: 'hello world ' + getRandomEmoji(),
           embeds: [{
+    "title": "title ~~(did you know you can have markdown here too?)~~",
+    "url": "sync-setting://test.com",
+    
+  },/*{
             title: 'Sync setting link',
             url: 'sync-setting://test',
             type: 'link'
-          }]
+          }*/]
         },
       });
     }
     // if (name === 'challenge' && data)
   }
 });
+
+app.get('/setting/:setting', async function (req, res) {
+  res.status(301).redirect(`sync-setting://${req.params.setting}`)
+})
 
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
