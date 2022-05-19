@@ -6,7 +6,7 @@ import {
   MessageComponentTypes,
   ButtonStyleTypes,
 } from 'discord-interactions';
-import { VerifyDiscordRequest, getRandomEmoji, DiscordRequest } from './utils.js';
+import { VerifyDiscordRequest, getRandomEmoji, DiscordRequest } from '../utils.js';
 import {
   SETTING_COMMAND,
   HasGuildCommands,
