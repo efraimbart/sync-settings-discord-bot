@@ -57,15 +57,12 @@ app.post('/interactions', async function (req, res) {
         url = setting.replace('sync-settings://', '')
       } else {
         return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          embeds: [{
-            title: title, //`sync-settings://${setting}`,
-            url: `${process.env.BASE_URL}setting/${url}`,
-            type: 'link'
-          }]
-        },
-      });
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: 'Invalid setting link',
+            flags: 64
+          },
+        });
       }
       
       // Send a message into the channel where command was triggered from
