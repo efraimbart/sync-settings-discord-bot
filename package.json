@@ -2,6 +2,7 @@
   "name": "sync-settings-discord-bot",
   "version": "1.0.0",
   "description": "Discord bot to hyperlink Sync settings",
+  "type": "module",
   "scripts": {
     "install": "node install.js"
   },
