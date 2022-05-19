@@ -11,6 +11,7 @@ import { getShuffledOptions, getResult } from './game.js';
 import {
   CHALLENGE_COMMAND,
   TEST_COMMAND,
+  SETTINGS_COMMAND,
   HasGuildCommands,
 } from './commands.js';
 
@@ -56,6 +57,7 @@ app.post('/interactions', async function (req, res) {
         },
       });
     }
+    // if (name === 'challenge' && data)
   }
 });
 
@@ -66,5 +68,6 @@ app.listen(PORT, () => {
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
     TEST_COMMAND,
     CHALLENGE_COMMAND,
+    SETTINGS_COMMAND
   ]);
 });

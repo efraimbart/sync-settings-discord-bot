@@ -65,6 +65,20 @@ export const TEST_COMMAND = {
   type: 1,
 };
 
+export const SETTINGS_COMMAND = {
+  name: 'setting',
+  description: 'Link to a Sync setting',
+  type: 1,
+  options: [
+    {
+      type: 3,
+      name: 'link',
+      description: 'Enter sync setting link',
+      required: true
+    }
+  ]
+}
+
 // Command containing options
 export const CHALLENGE_COMMAND = {
   name: 'challenge',
