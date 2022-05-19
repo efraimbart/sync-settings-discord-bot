@@ -5,7 +5,7 @@ import { SETTING_COMMAND } from './commands.js';
 const endpoint = `applications/${process.env.APP_ID}/commands`;
 // install command
 try {
-    await DiscordRequest(endpoint, { method: 'POST', body: command });
+    await DiscordRequest(endpoint, { method: 'POST', body: SETTING_COMMAND });
 } catch (err) {
     console.error(err);
 }
