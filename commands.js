@@ -59,7 +59,7 @@ function createCommandChoices() {
 }
 
 export const SETTING_COMMAND = {
-  name: 'setting-test',
+  name: 'setting',
   description: 'Link to a Sync setting',
   type: 1,
   options: [

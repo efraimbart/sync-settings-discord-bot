@@ -45,13 +45,11 @@ app.post('/interactions', async function (req, res) {
     const { name } = data;
 
     // "setting" guild command
-    if (name === 'setting-test') {
+    if (name === 'setting') {
       // Send a message into the channel where command was triggered from
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          // Fetches a random emoji to send from a helper function
-          // content: 'hello world ' + getRandomEmoji(),
           embeds: [{
             title: 'Sync setting link',
             url: `${process.env.BASE_URL}setting/test`,
@@ -60,12 +58,11 @@ app.post('/interactions', async function (req, res) {
         },
       });
     }
-    // if (name === 'challenge' && data)
   }
 });
 
 app.get('/setting/:setting', async function (req, res) {
-  return res.status(301).redirect(`sync-setting://${req.params.setting}`)
+  return res.redirect(301, `sync-settings://${req.params.setting}`)
 })
 
 app.listen(PORT, () => {
