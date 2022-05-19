@@ -1,6 +1,6 @@
 {
     "redirects": [
-        { "source": "/setting/:setting*", "destination": "sync-settings://:setting*"}
+        { "source": "/setting", "destination": "https://settings.com"}
     ]
 }
   
