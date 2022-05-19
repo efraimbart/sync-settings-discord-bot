@@ -1,6 +1,7 @@
 {
     "redirects": [
-        { "source": "/setting/:setting*", "destination": "sync-settings://:setting*"}
-    ]
+        { "source": "/setting/:setting*", "destination": "sync-settings://:setting*" }
+    ],
+    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
   

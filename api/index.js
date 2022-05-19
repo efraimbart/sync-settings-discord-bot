@@ -28,7 +28,7 @@ const activeGames = {};
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
  */
-app.post('/api', async function (req, res) {
+app.post('/api/interactions', async function (req, res) {
   // Interaction type and data
   const { type, id, data } = req.body;
 
@@ -81,10 +81,6 @@ app.post('/api', async function (req, res) {
     }
   }
 });
-
-app.get('/setting/:setting', async function (req, res) {
-  return res.redirect(301, `sync-settings://${req.params.setting}`)
-})
 
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
