@@ -70,3 +70,5 @@ app.post('/api/interactions', async function (req, res) {
     }
   }
 });
+
+module.exports = app;
