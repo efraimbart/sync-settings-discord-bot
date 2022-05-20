@@ -65,7 +65,7 @@ app.post('/api/interactions', async function (req, res) {
         data: {
           embeds: [{
             title: title, //`sync-settings://${setting}`,
-            url: `${process.env.BASE_URL}setting/${url}`,
+            url: `${process.env.BASE_URL}api/setting/${url}`,
             type: 'link'
           }]
         },
