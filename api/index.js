@@ -74,7 +74,7 @@ app.post('/api/interactions', async function (req, res) {
   }
 });
 
-app.get('/setting/:setting', async function (req, res) {
+app.get('/api/setting/:setting', async function (req, res) {
   return res.redirect(301, `sync-settings://${req.params.setting}`)
 })
 
