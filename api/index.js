@@ -74,10 +74,6 @@ app.post('/api/interactions', async function (req, res) {
   }
 });
 
-app.get('/api', async function (req, res) {
-  return res.redirect(301, `sync-settings://${req.params.setting}`)
-})
-
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
 });
