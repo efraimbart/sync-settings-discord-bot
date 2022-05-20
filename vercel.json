@@ -1,7 +1,4 @@
 {
-    "routes": [
-        { "src": "/setting/(.*)", "status": 308, "headers": { "Location": "https://example.com/$1" } },
-        { "src": "/api/(.*)", "dest": "/api" }
-    ]
+    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
   
