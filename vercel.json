@@ -1,7 +1,7 @@
 {
-    "redirects": [
-        { "source": "/setting/:setting", "destination": "sync-settings:///:setting" }
-    ],
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+    "routes": [
+        { "src": "/setting/(.*)", "status": 308, "headers": { "Location": "sync-settings://$1" } },
+        { "src": "/api/(.*)", "dest": "/api" }
+    ]
 }
   
